@@ -1,0 +1,536 @@
+/******************************
+*** @import + INITIAL STUFF ***
+******************************/
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+  --blue: #1f5eb5;
+  --lightBlue: #c9faf6;
+  --red: #d9272a;
+  --lightRed: #f9d7d8;
+  --lightRedButton: #d74749;
+  --yellow: #ffcb05;
+  --lightYellow: #f9ecb7;
+
+  --bug: #a8b820;
+  --dark: #705848;
+  --dragon: #7038f8;
+  --electric: #f8d030;
+  --fairy: #f0b6bc;
+  --fighting: #c03028;
+  --fire: #f08030;
+  --flying: #a890f0;
+  --ghost: #705898;
+  --grass: #78c850;
+  --ground: #e0c068;
+  --ice: #98d8d8;
+  --normal: #a8a878;
+  --poison: #a040a0;
+  --psychic: #f85888;
+  --rock: #b8a038;
+  --steel: #b8b8d0;
+  --water: #6890f0;
+  --stellar: #35ace7;
+}
+
+h1,
+p,
+tr,
+input,
+#types-container > span {
+  font-family: Lobster;
+}
+
+button {
+  /*   font-weight: bold; */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+p,
+th,
+td,
+#types-container > span,
+button {
+  font-size: 20px;
+}
+
+input::placeholder {
+  font-size: 17px;
+}
+
+/* Ocultando vs mostrando elementos*/
+.doNotShow {
+  display: none !important;
+}
+
+.show {
+  display: block;
+}
+
+/*------------------------------------------*/
+
+/***********
+*** BODY ***
+***********/
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/*------------------------------------------*/
+
+/*************
+*** HEADER ***
+**************/
+header {
+  background-color: var(--red);
+  display: flex;
+  justify-content: center;
+}
+
+header > #logo-pokepedia {
+  width: 25%;
+}
+
+/*------------------------------------------*/
+
+/***********
+*** MAIN ***
+***********/
+main {
+  flex: 1; /*Para que el footer quede siempre abajo*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*--------------------FORM----------------------*/
+
+section.formulario-buscar-pokemon > form.search {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+section.formulario-buscar-pokemon > form.search > input {
+  width: 250px;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+}
+
+section.formulario-buscar-pokemon > form.search > button {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background: none;
+  display: inline;
+}
+
+section.formulario-buscar-pokemon > form.search > button > img {
+  width: 50px; /* Ajusta el ancho según tus necesidades */
+  height: 50px; /* Ajusta la altura según tus necesidades */
+  transition: transform 0.3s ease;
+}
+
+section.formulario-buscar-pokemon > form.search > button > img:hover {
+  transform: rotate(45deg);
+}
+
+/*------------------POKEDEX GIF------------------------*/
+
+#pokedex {
+  margin-top: 2rem;
+}
+
+#pokedex > div {
+  display: flex;
+  justify-content: center;
+}
+
+#pokedex > div > img#pokedexGif {
+  width: 75%;
+  margin-bottom: 57px;
+}
+
+#pokedex > div > img#pokedexGifError {
+  width: 37.5%;
+}
+
+/*------------------TARJETAS------------------------*/
+
+#tarjeta {
+  border: 4px solid var(--blue);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  width: 800px;
+  height: 400px;
+  box-shadow: 5px 5px 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+
+.darkTarjeta {
+  background: url(./Recursos/gifs/dark.gif) center/cover no-repeat;
+}
+.dragonTarjeta {
+  background: url(./Recursos/gifs/dragon.gif) center/cover no-repeat;
+}
+.electricTarjeta {
+  background: url(./Recursos/gifs/electric.gif) center/cover no-repeat;
+}
+.fairyTarjeta {
+  background: url(./Recursos/gifs/fairy.gif) center/cover no-repeat;
+}
+.fightingTarjeta {
+  background: url(./Recursos/gifs/fight.gif) center/cover no-repeat;
+}
+.fireTarjeta {
+  background: url(./Recursos/gifs/fire.gif) center/cover no-repeat;
+}
+.flyingTarjeta {
+  background: url(./Recursos/gifs/flight.gif) center/cover no-repeat;
+}
+.ghostTarjeta {
+  background: url(./Recursos/gifs/ghost.gif) center/cover no-repeat;
+}
+.grassTarjeta,
+.bugTarjeta {
+  background: url(./Recursos/gifs/grass.gif) center/cover no-repeat;
+}
+.groundTarjeta {
+  background: url(./Recursos/gifs/ground.gif) center/cover no-repeat;
+}
+.iceTarjeta {
+  background: url(./Recursos/gifs/ice.gif) center/cover no-repeat;
+}
+.normalTarjeta {
+  background: url(./Recursos/gifs/normal.gif) center/cover no-repeat;
+}
+.poisonTarjeta {
+  background: url(./Recursos/gifs/poison.gif) center/cover no-repeat;
+}
+.psychicTarjeta {
+  background: url(./Recursos/gifs/psique.gif) center/cover no-repeat;
+}
+.rockTarjeta {
+  background: url(./Recursos/gifs/rock.gif) center/cover no-repeat;
+}
+.steelTarjeta {
+  background: url(./Recursos/gifs/steel.gif) center/cover no-repeat;
+}
+.waterTarjeta,
+.stellarTarjeta {
+  background: url(./Recursos/gifs/water.gif) center/cover no-repeat;
+}
+
+/*-------------------NOMBRE-WEIGHT-HEIGHT-----------------------*/
+section#contenedor-nombre-y-foto-pokemon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 300px;
+}
+
+section#contenedor-nombre-y-foto-pokemon > div.container-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+section#contenedor-nombre-y-foto-pokemon > div.container-name > h1,
+section#contenedor-nombre-y-foto-pokemon > div.container-name > p {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+/*--------------------POKEFOTOS----------------------*/
+
+section#contenedor-nombre-y-foto-pokemon > div#container-photos {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+section#contenedor-nombre-y-foto-pokemon
+  > div#container-photos
+  > #pokemonImageBack,
+section#contenedor-nombre-y-foto-pokemon
+  > div#container-photos
+  > #pokemonImageFront {
+  width: 60%;
+}
+
+/*-------------------TIPOS-----------------------*/
+#types-container {
+  display: flex;
+  justify-content: center;
+}
+
+.dark,
+.dragon,
+.electric,
+.fairy,
+.fighting,
+.fire,
+.flying,
+.ghost,
+.grass,
+.ground,
+.ice,
+.normal,
+.poison,
+.psychic,
+.rock,
+.steel,
+.water,
+.stellar,
+.bug {
+  margin: 0.5rem 0.3rem;
+  padding: 0.3rem 1rem 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.dark {
+  background-color: var(--dark);
+}
+.dragon {
+  background-color: var(--dragon);
+}
+.electric {
+  background-color: var(--electric);
+}
+.fairy {
+  background-color: var(--fairy);
+}
+.fighting {
+  background-color: var(--fighting);
+}
+.fire {
+  background-color: var(--fire);
+}
+.flying {
+  background-color: var(--flying);
+}
+.ghost {
+  background-color: var(--ghost);
+}
+.grass {
+  background-color: var(--grass);
+}
+.ground {
+  background-color: var(--ground);
+}
+.ice {
+  background-color: var(--ice);
+}
+.normal {
+  background-color: var(--normal);
+}
+.poison {
+  background-color: var(--poison);
+}
+.psychic {
+  background-color: var(--psychic);
+}
+.rock {
+  background-color: var(--rock);
+}
+.steel {
+  background-color: var(--steel);
+}
+.water {
+  background-color: var(--water);
+}
+.stellar {
+  background-color: var(--stellar);
+}
+.bug {
+  background-color: var(--grass);
+}
+
+/*-------------------TABLA-----------------------*/
+
+section.contenedor-info-pokemon {
+  display: flex;
+  justify-content: center;
+  /*   margin-top: 2rem; */
+}
+
+section.contenedor-info-pokemon > table > thead > tr.primera-fila {
+  background-color: var(--red);
+  color: #fff;
+}
+
+th,
+td {
+  border: 2px solid var(--blue);
+  text-align: center;
+  height: 40px;
+}
+
+td {
+  background-color: var(--yellow);
+}
+
+.tabla-celda-dcha {
+  width: 100px;
+  text-align: center;
+}
+
+.tabla-celda-izda {
+  width: 200px;
+}
+
+/*-------------------RELOAD-----------------------*/
+
+#reloadButtonContainer {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+#reloadButtonContainer > button {
+  border-radius: 10px;
+  padding: 0.3rem 1rem 0.5rem 1rem;
+  background-color: var(--red);
+  color: #fff;
+}
+
+#reloadButtonContainer > button:hover {
+  box-shadow: 5px 5px 10px black;
+  background-color: var(--lightRedButton);
+}
+
+/*------------------------------------------*/
+
+/*************
+*** FOOTER ***
+**************/
+
+footer {
+  background-color: var(--red);
+  padding: 1rem 1rem;
+}
+
+footer > p {
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  font-family: 'Lobster', sans-serif;
+}
+
+/*------------------------------------------*/
+
+/*************
+*** responsive ***
+**************/
+
+@media (max-width: 900px) {
+  #tarjeta {
+    padding: 2rem 1rem;
+
+    width: 400px;
+    height: auto;
+
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 700px) {
+  header > #logo-pokepedia {
+    width: 45%;
+  }
+}
+
+@media (max-width: 500px) {
+  header > #logo-pokepedia {
+    width: 55%;
+  }
+
+  #tarjeta {
+    padding: 2rem 1rem;
+
+    width: 300px;
+    height: auto;
+
+    flex-direction: column;
+  }
+
+  section#contenedor-nombre-y-foto-pokemon {
+    width: 280px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  p,
+  th,
+  td,
+  #types-container > span,
+  button {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  header > #logo-pokepedia {
+    width: 65%;
+  }
+
+  section.formulario-buscar-pokemon > form.search > input {
+    width: 200px;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    border-radius: 5px;
+  }
+
+  input::placeholder {
+    font-size: 15px;
+  }
+
+  #tarjeta {
+    width: 240px;
+    height: auto;
+  }
+
+  section#contenedor-nombre-y-foto-pokemon {
+    width: 240px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  p,
+  th,
+  td,
+  #types-container > span,
+  button {
+    font-size: 15px;
+  }
+
+  footer > p {
+    font-size: 20px;
+  }
+}

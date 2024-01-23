@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;,">
+
+    <style>
+      @font-face {
+        font-family: 'PokemonHollow';
+        src: url('./Recursos/fuentes-de-texto/pokemonHollow.ttf')
+          format('truetype');
+      }
+
+      @font-face {
+        font-family: 'PokemonSolid';
+        src: url('./Recursos/fuentes-de-texto/pokemonSolid.ttf')
+          format('truetype');
+      }
+    </style>
+    <title>Pokedex</title>
+  </head>
+
+  <body>
+    <header>
+      <img id="logo-pokepedia" src="./Recursos/imagenes/logo-pokepedia.png" alt="logo-pokepedia"></img>
+    </header>
+
+    <main>
+      <section class="formulario-buscar-pokemon">
+        <form class="search">
+          <input
+            type="search"
+            name="query"
+            required
+            placeholder="Busca por nombre o nº..."
+          />
+          <button type="submit">
+            <img src="./Recursos/imagenes/pokeball-icon.png" />
+          </button>
+        </form>
+      </section>
+
+      <section id="pokedex" class="show">
+        <div>
+          <img id="pokedexGif" src="./Recursos/imagenes/pokedex.gif" />
+          <img id="pokedexGifError" class="doNotShow" src="./Recursos/imagenes/pokedexerror.gif" />
+        </div>
+      </section>
+
+      <div id="tarjeta" class="doNotShow">
+        <section id="contenedor-nombre-y-foto-pokemon">
+          <div class="container-name">
+            <h1 id="pokemon-name-h1"></h1>
+            <p id="pokemon-weight-height"></p>
+          </div>
+
+          <div id="container-photos">
+            <!-- Agrega un elemento img para mostrar la imagen -->
+            <img
+              id="pokemonImageFront"
+              alt="Imagen frontal del Pokémon"
+              class="show"
+            />
+            <img
+              id="pokemonImageBack"
+              alt="Imagen trasera del Pokémon"
+              class="show"
+            />
+          </div>
+
+          <div id="types-container">
+          </div>
+        </section>
+
+        <section class="contenedor-info-pokemon">
+          <table id="table">
+            <thead>
+              <tr class="primera-fila">
+                <th class="tabla-celda-izda">Base</th>
+                <th class="tabla-celda-dcha">Stats</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tabla-celda-izda">HP:</td>
+                <td class="td-hp tabla-celda-dcha"></td>
+              </tr>
+              <tr>
+                <td class="tabla-celda-izda">Ataque:</td>
+                <td class="td-attack tabla-celda-dcha"></td>
+              </tr>
+              <tr>
+                <td class="tabla-celda-izda">Defensa:</td>
+                <td class="td-defense tabla-celda-dcha"></td>
+              </tr>
+              <tr>
+                <td class="tabla-celda-izda">Ataque especial:</td>
+                <td class="td-special-attack tabla-celda-dcha"></td>
+              </tr>
+              <tr>
+                <td class="tabla-celda-izda">Defensa especial:</td>
+                <td class="td-special-defense tabla-celda-dcha"></td>
+              </tr>
+              <tr>
+                <td class="tabla-celda-izda">Velocidad:</td>
+                <td class="td-speed tabla-celda-dcha"></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <div id="reloadButtonContainer">
+        <button id="reloadButton">REINICIAR</button>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; Jose Luis Modroño Berdiñas</p>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
